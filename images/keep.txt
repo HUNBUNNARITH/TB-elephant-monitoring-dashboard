@@ -1,1 +1,9 @@
+1. In GitHub, click **Add file** > **Create new file**.
+2. In the "Name your file..." box, type your desired folder name followed immediately by `/keep.txt` (e.g., `images/keep.txt`). The forward slash is what forces the folder to be created.
+3. Type a single word (like "test") in the large text box below.
+4. Click the green **Commit changes...** button at the top right.
+5. On your main repository page, click your newly created folder to open it.
+6. Click **Add file** > **Upload files**.
+7. Drag and drop your actual photo files (or station folders from your computer) directly into the dashed area.
+8. Click **Commit changes** to finalize the upload.
 
