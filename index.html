@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asian Elephant Camera Trap Monitor</title>
+
+<!-- All visual styling lives in style.css, not in this file. -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER: title + top-line summary numbers ============ -->
+<header>
+  <div>
+    <h1>Asian Elephant Camera Trap Monitor</h1>
+    <p>41 field stations</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="statStations">41</b><span>stations</span></div>
+    <div class="stat"><b id="statActive">0</b><span>with detections</span></div>
+    <div class="stat"><b id="statEvents">0</b><span>elephant events</span></div>
+    <div class="stat"><b id="statIndiv">0</b><span>individuals logged</span></div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ MAP CARD: SVG scatter of the 41 stations ============ -->
+  <section class="card">
+    <h2>Station map <small>grey = no data yet, amber = elephant activity (size = events)</small></h2>
+    <div id="mapWrap"></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--grey)"></i>No detections yet</span>
+      <span><i class="dot" style="background:var(--amber)"></i>Elephant activity</span>
+      <span>dashed ring = photos available</span>
+    </div>
+    <p class="map-hint">Click a station to see its details and camera trap photos.</p>
+  </section>
+
+  <!-- ============ CHART CARD: detections over time ============ -->
+  <section class="card">
+    <h2>Elephant events over time <small id="chartFilterLabel">all stations</small></h2>
+    <div id="chartWrap"></div>
+    <div class="row" style="margin-top:8px;">
+      <select id="stationFilter"><option value="">All stations</option></select>
+    </div>
+  </section>
+
+  <!-- ============ STATION ACTIVITY TABLE ============ -->
+  <section class="card full">
+    <h2>Station activity <small id="stationCount"></small></h2>
+    <div class="tbl-wrap">
+      <table id="stationTable">
+        <thead><tr>
+          <th data-key="id">Station</th><th data-key="events">Events</th>
+          <th data-key="individuals">Individuals</th><th data-key="last">Last detection</th>
+          <th data-key="status">Status</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ DETECTION LOG TABLE ============ -->
+  <section class="card full">
+    <h2>Detection log <small id="recordCount"></small></h2>
+    <div class="tbl-wrap">
+      <table id="recordTable">
+        <thead><tr>
+          <th data-key="station">Station</th><th data-key="date">Date</th>
+          <th data-key="species">Species</th><th data-key="groupSize">Group</th>
+          <th>Age/Sex</th><th>Event</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>Data source: EPL_BRM  · updated by the project team</footer>
+
+<!-- ============ STATION DETAIL / PHOTO GALLERY POP-UP ============ -->
+<div class="overlay" id="stationModal" hidden>
+  <div class="panel">
+    <div class="panel-head"><h3 id="modalTitle"></h3><button class="panel-close" id="modalClose" aria-label="Close">✕</button></div>
+    <div class="panel-stats" id="modalStats"></div>
+    <div class="photo-grid" id="modalPhotos"></div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" hidden><img id="lightboxImg" src="" alt=""></div>
+
+<!-- All behavior (loading data, drawing the map/chart, click handling) lives in app.js. -->
+<script src="app.js"></script>
+</body>
+</html>

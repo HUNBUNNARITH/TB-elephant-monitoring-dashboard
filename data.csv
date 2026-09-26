@@ -1,0 +1,17 @@
+station,date,species,group_size,age_sex,independent
+CT21,10/3/2026,Asian elephant,2,1 cow; 1 calf,yes
+CT21,10/3/2026,Asian elephant,2,1 cow; 1 calf,no
+CT63,10/5/2026,Asian elephant,1,1 bull,yes
+CT19,10/8/2026,Asian elephant,3,2 cows; 1 calf,yes
+CT19,10/8/2026,Asian elephant,3,2 cows; 1 calf,no
+CT19,11/8/2026,Asian elephant,3,2 cows; 1 calf,yes
+CT62,10/11/2026,Asian elephant,1,1 bull,yes
+CT49,10/14/2026,Asian elephant,2,1 bull; 1 cow,yes
+CT31,10/16/2026,Wild boar,4,,yes
+CT30,10/18/2026,Asian elephant,1,unknown,yes
+CT65,10/20/2026,Asian elephant,5,1 bull; 3 cows; 1 calf,yes
+CT42,10/22/2026,Asian elephant,2,2 bulls,yes
+CT22,10/24/2026,Asian elephant,1,1 cow,yes
+CT28,10/26/2026,Asian elephant,3,1 bull; 2 cows,yes
+CT21,10/27/2026,Asian elephant,2,1 cow; 1 calf,yes
+CT19,10/29/2026,Asian elephant,1,1 bull,yes
