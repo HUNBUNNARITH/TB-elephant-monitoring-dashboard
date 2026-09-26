@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Asian Elephant Camera Trap Monitor</title>
 
+<!-- Leaflet: powers the interactive basemap in the Station map card -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+
 <!-- All visual styling lives in style.css, not in this file. -->
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,8 +16,8 @@
 <!-- ============ HEADER: title + top-line summary numbers ============ -->
 <header>
   <div>
-    <h1>Asian Elephant Camera Trap Monitor</h1>
-    <p>41 field stations</p>
+    <h1>Transboundary Asian Elephant Camera Trap Monitoring</h1>
+    <p>41 Cameratrap</p>
   </div>
   <div class="stats">
     <div class="stat"><b id="statStations">41</b><span>stations</span></div>
@@ -25,16 +28,11 @@
 </header>
 
 <main>
-  <!-- ============ MAP CARD: SVG scatter of the 41 stations ============ -->
+  <!-- ============ MAP CARD: interactive Leaflet map of the 41 stations ============ -->
   <section class="card">
-    <h2>Station map <small>grey = no data yet, amber = elephant activity (size = events)</small></h2>
+    <h2>Station map <small>real basemap + boundary, buffer & station layers</small></h2>
     <div id="mapWrap"></div>
-    <div class="legend">
-      <span><i class="dot" style="background:var(--grey)"></i>No detections yet</span>
-      <span><i class="dot" style="background:var(--amber)"></i>Elephant activity</span>
-      <span>dashed ring = photos available</span>
-    </div>
-    <p class="map-hint">Click a station to see its details and camera trap photos.</p>
+    <p class="map-hint">Click a station marker for details and photos. Use the layers control (top-right) to switch basemap or turn each layer on/off — the legend (bottom-left) explains the map symbols.</p>
   </section>
 
   <!-- ============ CHART CARD: detections over time ============ -->
@@ -89,6 +87,8 @@
 </div>
 <div class="lightbox" id="lightbox" hidden><img id="lightboxImg" src="" alt=""></div>
 
+<!-- Leaflet: interactive basemap library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <!-- All behavior (loading data, drawing the map/chart, click handling) lives in app.js. -->
 <script src="app.js"></script>
 </body>
